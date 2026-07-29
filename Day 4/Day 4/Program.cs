@@ -1,23 +1,26 @@
-﻿int[] array  = new int[10] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-int num = 0;
-double average = 0;
+﻿List<int> array = new List<int> { 1, 2, 3, 4, 5, 10, 12, 23, 44, 55 };
+array.Add(13);
+array.Add(22);
+array.Add(67);
+array.Remove(10);
+int sum = 0;
 int max = array[0];
 int min = array[0];
-for  (int i = 0; i < array.Length; i++)
+double avarage;
+for (int i = 0; i < array.Count; i++)
 {
-        num += array[i];
-        if (array[i] > max)
-        {
-            max = array[i];
-        }
-        if (array[i] < min)
-        {
-            min = array[i];
-        }
+    sum += array[i];
+    if (array[i] > max)
+    {
+        max = array[i];
     }
-Console.WriteLine("Sum: " + num);
-average = (double)num / array.Length;
-Console.WriteLine("Average: " + average);
-Console.WriteLine("Max: " + max);
-Console.WriteLine("Min: " + min);
-
+    if (array[i] < min)
+    {
+        min = array[i];
+    }
+}
+avarage = (double)sum / array.Count;
+Console.WriteLine($"Sum: {sum}");
+Console.WriteLine($"Max: {max}");
+Console.WriteLine($"Min: {min}");
+Console.WriteLine($"Average: {avarage}");
